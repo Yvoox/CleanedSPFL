@@ -1,3 +1,6 @@
+const hostname = "spfl.tilaa.cloud";
+const pyPort = 5000;
+
 class Flower {
   constructor(id, name, color) {
     this.id = id;
@@ -59,7 +62,7 @@ function createDataSet() {
 
   var request = new XMLHttpRequest();
 
-  request.open("GET", "http://127.0.0.1:3000/bouquets", false);
+  request.open("GET", "http://" + hostname + "/bouquets", false);
   request.onload = function() {
     var data = JSON.parse(this.response);
 
@@ -90,7 +93,7 @@ function createDataSet() {
 function initSpeciesArray() {
   var request = new XMLHttpRequest();
 
-  request.open("GET", "http://127.0.0.1:3000/species", false);
+  request.open("GET", "http://" + hostname + "/species", false);
   request.onload = function() {
     var data = JSON.parse(this.response);
 
@@ -129,7 +132,7 @@ function initBouquetsPositions() {
 function initBouquetsPositions() {
   var request = new XMLHttpRequest();
 
-  request.open("GET", "http://127.0.0.1:5000/positions", false);
+  request.open("GET", "http://" + hostname + "/positions", false);
   request.onload = function() {
     var data = JSON.parse(this.response);
 
